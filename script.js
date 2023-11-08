@@ -8,18 +8,19 @@ window.onload = () => {
                     const myRow = document.getElementById("Library");
 
                     const col = document.createElement("div");
-                    col.className = "col-3";
+                    col.className = "col-12 col-md-4 col-xl-3";
 
                     const card = document.createElement("div");
-                    card.className = "card w-100 text-start gy-5";
-                    card.style = "height: 500px;"
+                    card.className = "card h-100 text-start";
+
 
                     const img = document.createElement("img");
-                    img.className = "card-img-top h-50 object-fit-cover";
+                    img.className = "card-img-top object-fit-cover";
                     img.src = elem.img;
+                    img.style = "height: 350px;"
 
                     const cardBody = document.createElement("div");
-                    cardBody.className = "card-body";
+                    cardBody.className = "card-body d-flex flex-column align-items-center";
 
                     const cardTitle = document.createElement("h5");
                     cardTitle.className = "card-title";
@@ -30,11 +31,11 @@ window.onload = () => {
                     cardPrice.innerText = elem.price;
 
                     const delBtn = document.createElement("button");
-                    delBtn.className = "btn btn-primary";
+                    delBtn.className = "btn btn-primary mt-auto";
                     delBtn.innerText = "Scarta";
 
-                    delBtn.onclick = function (x) {
-                        x.target.closest(".cardBody").remove()
+                    delBtn.onclick = function (e) {
+                        e.target.closest(".col-12").remove()
                     }
 
 
